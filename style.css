@@ -1,0 +1,227 @@
+/* Grundläggande styling */
+body {
+    font-family: Arial, sans-serif;
+    /* Använder Arial eller ett generiskt sans-serif-typsnitt */
+    margin: 0;
+    /* Tar bort standardmarginaler runt sidan */
+    padding: 0;
+    /* Tar bort standardpadding */
+    text-align: center;
+    /* Centrerar texten i hela sidan */
+    background-color: #f4f4f4;
+    /* Sätter en ljusgrå bakgrundsfärg */
+    color: #333;
+    /* Sätter textfärgen till en mörkgrå för bättre läsbarhet */
+}
+
+/* Header – Skapar stil för sidhuvudet */
+header {
+    background-color: #DC143C;
+    /* Sätter bakgrundsfärg till Crimson */
+    color: white;
+    /* Sätter textfärgen till vit för kontrast */
+    padding: 20px;
+    /* Ger headern padding runt om */
+}
+
+/* FLEXBOX: Profilsektion – Flexbox används för att skapa en responsiv och centrerad layout */
+.profile {
+    display: flex;
+    /* Aktiverar Flexbox */
+    flex-direction: column;
+    /* Ordnar flexitems vertikalt (en kolumn) */
+    align-items: center;
+    /* Centrerar alla element horisontellt */
+    background: white;
+    /* Sätter bakgrundsfärgen till vit */
+    padding: 20px;
+    /* Ger sektionen padding */
+    margin: 20px auto;
+    /* Ger en automatisk marginal på vänster och höger för att centrera den */
+    border-radius: 10px;
+    /* Rundar hörnen på sektionen */
+    max-width: 400px;
+    /* Sätter ett maximalt breddmått på 400px */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    /* Lägger till en skugga runt sektionen för att ge den djup */
+}
+
+/* Profilbild med animerad hover-effekt */
+.profile-img {
+    width: 150px;
+    /* Sätter bredden på profilbilden */
+    height: 150px;
+    /* Sätter höjden på profilbilden */
+    border-radius: 50%;
+    /* Gör bilden rund genom att sätta border-radius till 50% */
+    transition: transform 0.3s ease-in-out;
+    /* Gör en smidig övergång för transformationen */
+}
+
+/* Hover-effekt för profilbilden */
+.profile-img:hover {
+    transform: scale(1.1);
+    /* Vid hover, förstoras bilden med 10% */
+}
+
+/* Animerad knapp */
+.contact-btn {
+    background: hsl(348, 83%, 60%);
+    /* Sätter bakgrundsfärg till en röd nyans */
+    color: white;
+    /* Sätter textfärgen på knappen till vit */
+    border: none;
+    /* Tar bort standardkanterna på knappen */
+    padding: 10px 20px;
+    /* Ger knappen padding inuti */
+    margin-top: 10px;
+    /* Lägger till ett mellanrum ovanför knappen */
+    font-size: 16px;
+    /* Sätter textstorleken för knappen */
+    cursor: pointer;
+    /* Ändrar muspekaren till en hand för att indikera att den är klickbar */
+    transition: background 0.3s ease-in-out;
+    /* Gör en smidig övergång för bakgrundsfärgen */
+}
+
+/* Hover-effekt för knappen */
+.contact-btn:hover {
+    background: hsl(346, 86%, 24%);
+    /* Vid hover, ändras bakgrundsfärgen till en mörkare röd */
+}
+
+/* GRID: Projektsektion – Använder CSS Grid för att skapa en tvåkolumnslayout */
+.grid-container {
+    display: grid;
+    /* Aktiverar CSS Grid */
+    grid-template-columns: repeat(2, 1fr);
+    /* Skapar två kolumner av lika stor bredd */
+    gap: 20px;
+    /* Lägger till ett avstånd mellan grid-items */
+    padding: 20px;
+    /* Ger padding runt hela grid-container */
+    max-width: 600px;
+    /* Sätter ett maximalt breddmått på 600px */
+    margin: auto;
+    /* Centrerar grid-container på sidan */
+}
+
+/* Stil för varje item i grid-layouten */
+.grid-item {
+    background: white;
+    /* Sätter bakgrundsfärgen till vit */
+    padding: 20px;
+    /* Ger padding inuti varje grid-item */
+    border-radius: 8px;
+    /* Rundar hörnen på varje item */
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    /* Lägger till en lätt skugga för att ge djup */
+}
+
+/* MEDIA QUERIES: Anpassning för mobil – För att göra sidan responsiv */
+@media (max-width: 768px) {
+
+    /* Vid skärmstorlekar mindre än eller lika med 768px, ändras layouten */
+    .grid-container {
+        grid-template-columns: 1fr;
+        /* Skapar en enda kolumn istället för två */
+    }
+
+    .profile {
+        max-width: 90%;
+        /* Sätter en mindre max-bredd för profilsektionen på mobil */
+    }
+}
+
+/* Tillgänglighet – Fokus-styling för knappar */
+button:focus {
+    outline: 3px solid yellow;
+    /* När en knapp får fokus, markerar vi den med en gul kantlinje för bättre synlighet */
+}
+
+/* ======== Position: static (standardläge) ======== */
+/* Elementet följer normalt dokumentflöde */
+.static-box {
+    position: static;
+    background: lightgray;
+    padding: 10px;
+    border: 1px solid #aaa;
+    margin: 20px auto;
+    width: 200px;
+}
+
+/* ======== Position: relative ======== */
+/* Utgår från sin normala plats, men kan flyttas med t.ex. top/left */
+.relative-box {
+    position: relative;
+    background: lightblue;
+    padding: 10px;
+    border: 1px solid #0077cc;
+    margin: 20px auto;
+    width: 200px;
+    top: 10px;
+    /* Flyttas nedåt 10px från sin ursprungliga plats */
+    left: 20px;
+    /* Flyttas åt höger 20px */
+}
+
+/* ======== Position: fixed ======== */
+/* Ligger fast i viewporten oavsett scroll. Bra för t.ex. knappar eller meny */
+.fixed-box {
+    position: fixed;
+    bottom: 20px;
+    /* 20px från botten av skärmen */
+    right: 20px;
+    /* 20px från högerkanten */
+    background: crimson;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    z-index: 1000;
+    /* Säkerställ att den ligger ovanpå annat innehåll */
+}
+
+
+.traffic {
+display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.traffic-light {
+    width: 150px;
+    height: 400px;
+    background-color: #333;
+    border: 5px solid #000;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px 0;
+    margin: 20px;
+}
+
+.light {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid #000;
+    background-color: #444;
+}
+
+.red {
+    background-color: #ff0000;
+}
+
+.yellow {
+    background-color: #ffff00;
+}
+
+.green {
+    background-color: #00ff00;
+}
