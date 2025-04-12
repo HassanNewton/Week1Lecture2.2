@@ -7,21 +7,23 @@ body {
     padding: 0;
     /* Tar bort standardpadding */
     text-align: center;
-    /* Centrerar texten i hela sidan */
+        /* Centrerar texten i hela sidan */
     background-color: #f4f4f4;
     /* Sätter en ljusgrå bakgrundsfärg */
     color: #333;
     /* Sätter textfärgen till en mörkgrå för bättre läsbarhet */
+
 }
 
 /* Header – Skapar stil för sidhuvudet */
 header {
-    background-color: #DC143C;
+    background-color: #1e115e;
     /* Sätter bakgrundsfärg till Crimson */
     color: white;
     /* Sätter textfärgen till vit för kontrast */
     padding: 20px;
     /* Ger headern padding runt om */
+    
 }
 
 /* FLEXBOX: Profilsektion – Flexbox används för att skapa en responsiv och centrerad layout */
@@ -44,6 +46,7 @@ header {
     /* Sätter ett maximalt breddmått på 400px */
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     /* Lägger till en skugga runt sektionen för att ge den djup */
+    
 }
 
 /* Profilbild med animerad hover-effekt */
@@ -66,7 +69,7 @@ header {
 
 /* Animerad knapp */
 .contact-btn {
-    background: hsl(348, 83%, 60%);
+    background: hsl(250, 48%, 42%);
     /* Sätter bakgrundsfärg till en röd nyans */
     color: white;
     /* Sätter textfärgen på knappen till vit */
@@ -86,7 +89,7 @@ header {
 
 /* Hover-effekt för knappen */
 .contact-btn:hover {
-    background: hsl(346, 86%, 24%);
+    background: hsl(250, 100%, 16%);
     /* Vid hover, ändras bakgrundsfärgen till en mörkare röd */
 }
 
@@ -104,6 +107,8 @@ header {
     /* Sätter ett maximalt breddmått på 600px */
     margin: auto;
     /* Centrerar grid-container på sidan */
+    text-align: center;
+        /* Centrerar texten i hela sidan */
 }
 
 /* Stil för varje item i grid-layouten */
@@ -116,6 +121,8 @@ header {
     /* Rundar hörnen på varje item */
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
     /* Lägger till en lätt skugga för att ge djup */
+    grid-column: span 1;
+/* Spänner över en kolumn testa ändra till 2 */
 }
 
 /* MEDIA QUERIES: Anpassning för mobil – För att göra sidan responsiv */
@@ -183,45 +190,216 @@ button:focus {
 }
 
 
+/* .traffic - Skapar en container för trafikljuset och centrerar den på sidan */
 .traffic {
-display: flex;
+    display: flex;
+    /* Använder Flexbox för att arrangera element i en rad eller kolumn */
     justify-content: center;
+    /* Centrerar elementen horisontellt */
     align-items: center;
+    /* Centrerar elementen vertikalt */
     height: 100vh;
+    /* Gör att containern fyller hela höjden på fönstret */
     margin: 0;
+    /* Tar bort standardmarginaler */
     background-color: #f0f0f0;
+    /* Sätter bakgrundsfärgen på sidan */
 }
 
+/* .traffic-light - Skapar själva trafikljuskonstruktionen */
 .traffic-light {
     width: 150px;
+    /* Bredden på trafikljuset */
     height: 400px;
+    /* Höjden på trafikljuset */
     background-color: #333;
+    /* Mörk bakgrund för trafikljuset */
     border: 5px solid #000;
+    /* Tjock svart kant runt trafikljuset */
     border-radius: 30px;
+    /* Rundar hörnen på trafikljuset */
     display: flex;
+    /* Gör trafikljuset till en flex-container */
     flex-direction: column;
+    /* Ställer in flex-riktningen till kolumn (vertikalt) */
     justify-content: space-around;
+    /* Dela upp elementen med jämnt mellanrum vertikalt */
     align-items: center;
+    /* Centrerar elementen horisontellt */
     padding: 20px 0;
+    /* Lägger till padding (utrymme) på toppen och botten */
     margin: 20px;
+    /* Lägger till marginal runt hela trafikljuset */
 }
 
+/* .light - Allmän stil för ljusen (röd, gul, grön) */
 .light {
     width: 100px;
+    /* Sätter bredden för ljusen */
     height: 100px;
+    /* Sätter höjden för ljusen */
     border-radius: 50%;
+    /* Gör ljusen runda genom att sätta border-radius till 50% */
     border: 3px solid #000;
+    /* Svart kant runt varje ljus */
     background-color: #444;
+    /* Standard bakgrundsfärg för ljusen */
 }
 
+/* Röd, gul och grön - Specifika bakgrundsfärger för varje ljus */
 .red {
     background-color: #ff0000;
+    /* Röd färg för röd trafikljus */
 }
 
 .yellow {
     background-color: #ffff00;
+    /* Gul färg för gult trafikljus */
 }
 
 .green {
     background-color: #00ff00;
+    /* Grön färg för grönt trafikljus */
+}
+
+/* .ball - En boll som ska animeras (skulle vara en del av en animation) */
+.ball {
+    width: 50px;
+    /* Sätter bollens bredd */
+    height: 50px;
+    /* Sätter bollens höjd */
+    background-color: crimson;
+    /* Färgen på bollen */
+    border-radius: 50%;
+    /* Gör bollen rund */
+    position: relative;
+    /* Krävs för att kunna animera top-positionen */
+    /* animation: bounce 2s ease-in-out; */
+    /* Animation som är kommenterad för nu */
+}
+
+/* När muspekaren är över bollen, startar animeringen */
+.ball:hover {
+    animation: bounce 1s infinite ease-out;
+    /* Animerar bollen för att studsa upp och ner */
+}
+
+/* .box - En ruta som ändrar storlek vid hover */
+.box {
+    width: 100px;
+    /* Sätter bredden på rutan */
+    height: 100px;
+    /* Sätter höjden på rutan */
+    background-color: tomato;
+    /* Röd bakgrund för rutan */
+    transition: width 0.3s ease, height 0.3s ease;
+    /* Animerar bredd och höjd när rutan ändras */
+}
+
+/* .box-two - En annan ruta med animation */
+.box-two {
+    width: 100px;
+    /* Sätter bredden på rutan */
+    height: 100px;
+    /* Sätter höjden på rutan */
+    background-color: rgb(120, 71, 255);
+    /* Lila bakgrundsfärg för rutan */
+    animation: fadeIn 0.8s ease-in;
+    /* Fade-in animation */
+}
+
+/* Hover-effekt som ändrar storleken på rutan */
+.box:hover {
+    width: 150px;
+    /* Gör rutan bredare när muspekaren är över */
+    height: 150px;
+    /* Gör rutan högre när muspekaren är över */
+}
+
+/* animation-container - En container som använder grid för att ordna elementen */
+.animation-container {
+    display: grid;
+    /* Använder CSS Grid för layout */
+    grid-template-columns: 1fr 1fr;
+    /* Skapar två lika stora kolumner */
+    grid-template-rows: min-content;
+    /* Raderna anpassar sig till det minsta innehållet */
+    gap: 20px;
+    /* Sätter ett mellanrum mellan rutorna */
+    height: 300px;
+    /* Sätter höjden på containern */
+    width: 100%;
+    /* Sätter bredden till 100% */
+    padding: 20px;
+    /* Lägger till padding på containern */
+    place-items: center;
+    /* Centrerar alla items både horisontellt och vertikalt */
+}
+
+/* footer - En footer med textjustering till vänster */
+.footer {
+    padding: 20px;
+    /* Lägger till padding */
+    text-align: left;
+    /* Justerar texten till vänster */
+    /* Centrerar texten i hela sidan */
+}
+
+/* .ball-two - En annan boll som animeras när den laddas in */
+.ball-two {
+    width: 50px;
+    /* Sätter bredden på bollen */
+    height: 50px;
+    /* Sätter höjden på bollen */
+    background-color: crimson;
+    /* Färgen på bollen */
+    border-radius: 50%;
+    /* Gör bollen rund */
+    position: relative;
+    /* Krävs för att kunna animera bollen */
+    animation: slideIn 1s ease-in-out;
+    /* Animation som gör att bollen rör sig in från vänster */
+}
+
+/* Animering för att få bollen att studsa upp och ner */
+@keyframes bounce {
+    from {
+        top: 0;
+        /* Börjar vid positionen 0 (toppen) */
+    }
+
+    to {
+        top: 200px;
+        /* Slutar vid positionen 200px från toppen */
+    }
+}
+
+/* Fade-in animation för .box-two */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        /* Börjar med osynlig (opacity 0) */
+    }
+
+    to {
+        opacity: 1;
+        /* Slutar med synlig (opacity 1) */
+    }
+}
+
+/* Slide-in animation för .ball-two */
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        /* Börjar utanför skärmen till vänster */
+        opacity: 0;
+        /* Börjar osynlig */
+    }
+
+    to {
+        transform: translateX(0);
+        /* Flyttar till sin ursprungliga position */
+        opacity: 1;
+        /* Blir synlig */
+    }
 }
