@@ -1,0 +1,32 @@
+/* Grundstil för alla knappar */
+.btn {
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-family: sans-serif;
+}
+
+/* Storlekar */
+.small-btn {
+    font-size: 12px;
+    padding: 6px 12px;
+    background-color: #4CAF50;
+}
+
+.large-btn {
+    font-size: 18px;
+    padding: 12px 24px;
+    background-color: #2196F3;
+}
+
+/* Rundade hörn */
+.rounded {
+    border-radius: 12px;
+}
+
+/* Wrapper för layout */
+.wrapper {
+    max-width: 600px;
+    margin: 40px auto;
+    text-align: center;
+}

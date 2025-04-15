@@ -69,7 +69,7 @@ header {
 
 /* Animerad knapp */
 .contact-btn {
-    background: hsl(250, 48%, 42%);
+    background: hsl(250, 60%, 30%);
     /* Sätter bakgrundsfärg till en röd nyans */
     color: white;
     /* Sätter textfärgen på knappen till vit */
@@ -89,7 +89,7 @@ header {
 
 /* Hover-effekt för knappen */
 .contact-btn:hover {
-    background: hsl(250, 100%, 16%);
+    background: hsl(250, 80%, 50%);
     /* Vid hover, ändras bakgrundsfärgen till en mörkare röd */
 }
 
@@ -125,20 +125,7 @@ header {
 /* Spänner över en kolumn testa ändra till 2 */
 }
 
-/* MEDIA QUERIES: Anpassning för mobil – För att göra sidan responsiv */
-@media (max-width: 768px) {
 
-    /* Vid skärmstorlekar mindre än eller lika med 768px, ändras layouten */
-    .grid-container {
-        grid-template-columns: 1fr;
-        /* Skapar en enda kolumn istället för två */
-    }
-
-    .profile {
-        max-width: 90%;
-        /* Sätter en mindre max-bredd för profilsektionen på mobil */
-    }
-}
 
 /* Tillgänglighet – Fokus-styling för knappar */
 button:focus {
@@ -262,27 +249,7 @@ button:focus {
     /* Grön färg för grönt trafikljus */
 }
 
-/* .ball - En boll som ska animeras (skulle vara en del av en animation) */
-.ball {
-    width: 50px;
-    /* Sätter bollens bredd */
-    height: 50px;
-    /* Sätter bollens höjd */
-    background-color: crimson;
-    /* Färgen på bollen */
-    border-radius: 50%;
-    /* Gör bollen rund */
-    position: relative;
-    /* Krävs för att kunna animera top-positionen */
-    /* animation: bounce 2s ease-in-out; */
-    /* Animation som är kommenterad för nu */
-}
 
-/* När muspekaren är över bollen, startar animeringen */
-.ball:hover {
-    animation: bounce 1s infinite ease-out;
-    /* Animerar bollen för att studsa upp och ner */
-}
 
 /* .box - En ruta som ändrar storlek vid hover */
 .box {
@@ -306,6 +273,14 @@ button:focus {
     /* Lila bakgrundsfärg för rutan */
     animation: fadeIn 0.8s ease-in;
     /* Fade-in animation */
+    transition-property: background-color;  
+    transition-duration: 0.5s;
+    transition-timing-function: linear;
+    transition-delay: 0s;
+}
+
+.box-two:hover {
+    background-color: aqua;
 }
 
 /* Hover-effekt som ändrar storleken på rutan */
@@ -316,17 +291,23 @@ button:focus {
     /* Gör rutan högre när muspekaren är över */
 }
 
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
 /* animation-container - En container som använder grid för att ordna elementen */
 .animation-container {
     display: grid;
     /* Använder CSS Grid för layout */
     grid-template-columns: 1fr 1fr;
     /* Skapar två lika stora kolumner */
-    grid-template-rows: min-content;
+    grid-template-rows: 1fr 1fr;
     /* Raderna anpassar sig till det minsta innehållet */
     gap: 20px;
     /* Sätter ett mellanrum mellan rutorna */
-    height: 300px;
+    height: 100vh;
     /* Sätter höjden på containern */
     width: 100%;
     /* Sätter bredden till 100% */
@@ -336,6 +317,28 @@ button:focus {
     /* Centrerar alla items både horisontellt och vertikalt */
 }
 
+
+/* MEDIA QUERIES: Anpassning för mobil – För att göra sidan responsiv */
+@media (max-width: 768px) {
+
+    /* Vid skärmstorlekar mindre än eller lika med 768px, ändras layouten */
+    .grid-container {
+        grid-template-columns: 1fr;
+        /* Skapar en enda kolumn istället för två */
+    }
+
+        .animation-container{
+            grid-template-columns: 1fr;
+            grid-template-rows: auto;
+            height: 100vh;
+            
+        }
+
+    .profile {
+        max-width: 90%;
+        /* Sätter en mindre max-bredd för profilsektionen på mobil */
+    }
+}
 /* footer - En footer med textjustering till vänster */
 .footer {
     padding: 20px;
@@ -361,19 +364,42 @@ button:focus {
     /* Animation som gör att bollen rör sig in från vänster */
 }
 
-/* Animering för att få bollen att studsa upp och ner */
-@keyframes bounce {
-    from {
-        top: 0;
-        /* Börjar vid positionen 0 (toppen) */
-    }
-
-    to {
-        top: 200px;
-        /* Slutar vid positionen 200px från toppen */
-    }
+/* .ball - En boll som ska animeras (skulle vara en del av en animation) */
+.ball {
+    width: 50px;
+    /* Sätter bollens bredd */
+    height: 50px;
+    /* Sätter bollens höjd */
+    background-color: crimson;
+    /* Färgen på bollen */
+    border-radius: 50%;
+    /* Gör bollen rund */
+    position: relative;
+    /* Krävs för att kunna animera top-positionen */
+    /* animation: bounce 2s ease-in-out; */
+    /* Animation som är kommenterad för nu */
 }
 
+/* När muspekaren är över bollen, startar animeringen */
+.ball:hover {
+    animation: bounce 1s infinite ease-out;
+    /* Animerar bollen för att studsa upp och ner */
+}
+
+/* Animering för att få bollen att studsa upp och ner */
+@keyframes bounce {
+    0% {
+        top: 0;
+    }
+
+    50% {
+        top: 400px;
+    }
+
+    100% {
+        top: 0;
+    }
+}
 /* Fade-in animation för .box-two */
 @keyframes fadeIn {
     from {
